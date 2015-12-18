@@ -1,0 +1,23 @@
+// Load jquery library
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+// Create title DIV
+<div class="newsfeed-title"  width='100%'>NEWS FEED</div>
+
+
+// Create newsfeed DIV
+<div class="newsfeed-feed" id="newsfeed">
+  <small id="loading-feed">
+    // Add loading image
+    <img src="https://s-media-cache-ak0.pinimg.com/originals/e0/f5/a5/e0f5a5f8c2e378df4fddd75e26e9a5a3.gif" width="70px">
+    <BR>
+    LOADING
+  </small>
+</div>
+
+<script type="text/javascript">
+  $.get("pathtoyourfile/newsfeed.php", function(data){
+  $('#loading-feed').hide();
+  $('#newsfeed').append(data);
+  });
+</script>
